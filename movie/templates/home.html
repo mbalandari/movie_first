@@ -17,7 +17,16 @@
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
         </form>
-        Searching for {{ searchTerm }}
+        <p>Searching for {{ searchTerm }}</p>
+        {% for movie in movies %}
+        <h2>{{ movie.title }}</h2>
+        <h3>{{ movie.description }}</h3>
+        <img class="w-25" src="{{ movie.image.url }}">
+        {% if movie.url %}
+        <a href="{{ movie.url }}">Movie Link</a>
+        {% endif %}
+        {% endfor %}
+
         <br />
         <br />
         <h2>Join our mailing list:</h2>
